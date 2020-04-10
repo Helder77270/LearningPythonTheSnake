@@ -372,6 +372,33 @@ def checkMailInFile(filename):
 # PDF EXO 23
 
 def compterMots(str):
-    
+    dico = dict()
+    list = str.split()
+
+    for i in list:
+        dico[i] = list.count(i)
+    return dico
+
+# a = compterMots("Helder Gautier Helder Gautier Helder Gautier Lisa")
+# print(a)
+
+# PDF EXO 24
+
+def volumeSphere(r):
+    volume = ((4 * pi) * (r **3)) / 3
+    return volume
+
+# print(volumeSphere(10))
+
+# PDF EXO 25
+
+def somme(a,b,c):
+    return a + b + c
+
+monTuple = 1,2,3
+maListe = []
+
+print(somme(maListe))
+
 
 
