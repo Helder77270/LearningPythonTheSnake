@@ -78,10 +78,10 @@ def checkIfOnlyOneArobase(chaine):
             cpt += 1
 
     if cpt == 1:
-       # print("OK")
+        print("OK @")
         return True
     else:
-       # print("NOT OK")
+        print("NOT OK @")
         return False
 
 def checkIfMail(chaine):
@@ -180,4 +180,134 @@ def printEvenNumbers(n):
                 cpt+=1
 
 
-printEvenNumbers(50)
+### printEvenNumbers(50)
+
+# PDF EXO 15
+
+def exoListe():
+    liste = [17, 38, 10, 25, 72]
+
+    print("Triez et affichez la liste")
+    liste.sort()
+    print(liste)
+
+    print("Ajoutez l’élément 12 à la liste et affichez la liste")
+    liste.append(12)
+    print(liste)
+
+    print("Renversez et affichez la liste")
+    liste.reverse()
+    print(liste)
+
+    print("Affichez l’indice de l’élément 17")
+    for i in range(len(liste)):
+        if liste[i] == 17:
+            print(i)
+
+    #Plus simple :D
+    print(liste.index(17))
+
+    print("Enlevez l’élément 38 et affichez la liste")
+    liste.remove(38)
+    print(liste)
+
+    print("Affichez la sous-liste du 2 eme au 3e élément")
+    print(liste[1:3])
+
+    print("Affichez la sous-liste du début au 2eélément")
+    print(liste[0:2])
+
+    print("Affichez la sous-liste du 3eélément à la fin de la liste")
+    print(liste[2:len(liste)])
+
+    print("Affichez la sous-liste complète de la liste")
+    print(liste[0:len(liste)])
+
+#exoListe()
+
+# PDF EXO 16
+
+def reverseString(word):
+    tmp = word[::-1]
+    print(tmp)
+
+### reverseString("!! sruoc sel tnadnep xilfteN redrager sap tuaf en lI")
+
+# PDF EXO 17
+
+def palindrome(word):
+    tmp = word[::-1]
+    if word == tmp:
+        print("C'est un palindrome")
+    else:
+        print("Ce n'est pas un palindrome")
+
+### palindrome("Kayak")
+### palindrome("kayak")
+
+# PDF EXO 18
+def checkDotsBeforeAt(mail):
+    i = 0
+    cptDot = 0
+    str(mail)
+    while mail[i] != '@':
+        if mail[i] == '.':
+            cptDot += 1
+            i += 1
+        else:
+            i += 1
+    if cptDot <= 1:
+        print("OK POINT BEFORE @")
+        return True
+    else:
+        print("NOT OK POINT BEFORE @")
+        return False
+
+def checkDotsAfterAt(mail):
+    cptDot = 0
+    tmp = mail[::-1]
+    i = 0
+    print(tmp)
+    while i != '@':
+        if tmp[i] == '.':
+            cptDot += 1
+        i += 1
+    print(cptDot)
+
+    if cptDot == 1:
+        print("OK POINT POST @")
+        return True
+    else:
+        print("NOT OK POINT POST @")
+        return False
+    
+def checkIfOnly3charAfterLastPoint(mail):
+    tmp = mail[::-1]
+    if tmp[3] == '.':
+        print("OK 3 CHAR")
+        return True
+    else:
+        print("NOT OK 3 CHAR")
+        return False
+
+def highLevelMailCheck(mail):
+    str(mail)
+    if checkDotsBeforeAt(mail) and checkIfOnlyOneArobase(mail) and checkDotsAfterAt(mail) and checkIfOnly3charAfterLastPoint(mail):
+        print("Ce mail est correct")
+    else:
+        print("Ce mail est incorrect")
+
+# mail = "helder.salvador@yahoo.com"
+# mail2 = "helder..salvador@yahoo.com"
+mail3 = "helder.salvador@yahoo..com"
+# mail4 = "helder.salvador@@yahoo.com"
+#
+checkDotsAfterAt(mail3)
+# print("DOIT ETRE CORRECT \n")
+# highLevelMailCheck(mail)
+# print("DOIT ETRE INCORRECT \n")
+# highLevelMailCheck(mail2)
+# print("DOIT ETRE INCORRECT \n")
+# highLevelMailCheck(mail3)
+# print("DOIT ETRE INCORRECT \n")
+# highLevelMailCheck(mail4)
