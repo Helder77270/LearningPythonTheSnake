@@ -257,38 +257,31 @@ def checkDotsBeforeAt(mail):
         else:
             i += 1
     if cptDot <= 1:
-        print("OK POINT BEFORE @")
         return True
     else:
-        print("NOT OK POINT BEFORE @")
         return False
 
 def checkDotsAfterAt(mail):
     cptDot = 0
     tmp = mail[::-1]
     i = 0
-    print(tmp)
 
     while mail[i] != '@':
         if tmp[i] == '.':
             cptDot += 1
         i += 1
-    print(cptDot)
 
     if cptDot == 1:
-        print("OK POINT POST @")
         return True
     else:
-        print("NOT OK POINT POST @")
         return False
 
 def checkIfOnly3charAfterLastPoint(mail):
     tmp = mail[::-1]
     if tmp[3] == '.':
-        print("OK 3 CHAR")
+        print("K POINT")
         return True
     else:
-        print("NOT OK 3 CHAR")
         return False
 
 def highLevelMailCheck(mail):
@@ -298,16 +291,87 @@ def highLevelMailCheck(mail):
     else:
         print("Ce mail est incorrect")
 
-mail = "helder.salvador@yahoo.com"
-mail2 = "helder..salvador@yahoo.com"
-mail3 = "helder.salvador@yahoo..com"
-mail4 = "helder.salvador@@yahoo.com"
+# mail = "helder.salvador@yahoo.com"
+# mail2 = "helder..salvador@yahoo.com"
+# mail3 = "helder.salvador@yahoo..com"
+# mail4 = "helder.salvador@@yahoo.com"
+#
+# print("DOIT ETRE CORRECT \n")
+# highLevelMailCheck(mail)
+# print("DOIT ETRE INCORRECT \n")
+# highLevelMailCheck(mail2)
+# print("DOIT ETRE INCORRECT \n")
+# highLevelMailCheck(mail3)
+# print("DOIT ETRE INCORRECT \n")
+# highLevelMailCheck(mail4)
 
-print("DOIT ETRE CORRECT \n")
-highLevelMailCheck(mail)
-print("DOIT ETRE INCORRECT \n")
-highLevelMailCheck(mail2)
-print("DOIT ETRE INCORRECT \n")
-highLevelMailCheck(mail3)
-print("DOIT ETRE INCORRECT \n")
-highLevelMailCheck(mail4)
+# PDF EXO 19
+
+def listExo19():
+    liste = []
+    liste2 = [0.0 , 0.0 , 0.0 , 0.0 , 0.0]
+
+    print(liste)
+    print(liste2)
+
+#listExo19()
+
+# PDF EXO 20
+
+def afficherExo20():
+    #Range 0 à 3
+    for i in range(4):
+        print(i)
+    print(" ------------------- ")
+    # Range 4 à 7
+    for i in range(4,8):
+        print(i)
+    print(" ------------------- ")
+    # Range 2 à 8, 2 par 2
+    for i in range(2,9):
+        if i % 2 == 0:
+            print(i)
+    print(" ------------------- ")
+    liste = [0,1,2,3,4,5]
+    print(liste.index(3))
+    print(liste.index(6)) #Renvoie du vide
+
+#afficherExo20()
+
+# PDF EXO 21
+
+def readMultipleLines(filename, lines):
+    file = open(filename,"r")
+    newFile = open("data.txt", "w+")
+    int(lines)
+    for i in range(lines):
+        str = file.readline()
+        newFile.write(str)
+
+    newFile.close()
+    file.close()
+
+#readMultipleLines("file.txt",2)
+
+# PDF EXO 22
+
+def checkMailInFile(filename):
+    file = open(filename, "r")
+
+    for line in file.readlines():
+        line = line[:-1]
+        if checkIfOnlyOneArobase(str(line)) and checkIfOnly3charAfterLastPoint(str(line)):
+            print("C'est un mail")
+            print(line.split())
+        else:
+            print("Ce n'est pas un mail")
+            print(line)
+
+#checkMailInFile("data.txt")
+
+# PDF EXO 23
+
+def compterMots(str):
+    
+
+
