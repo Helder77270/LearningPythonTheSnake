@@ -107,3 +107,77 @@ def boucleLetter(word):
         print(word[i])
 
 ### boucleLetter("Confinement")
+
+# PDF EXO 9
+def boucleWhile():
+    a = 0
+    b = 10
+
+    while a < b:
+        print(a)
+        a += 1
+
+### boucleWhile()
+
+# PDF EXO 10
+
+def boucleWhileDecrement():
+    a = 0
+    b = 10
+
+    while b > a:
+        if b % 2 == 1:
+            print(b)
+        b -= 1
+
+### boucleWhileDecrement()
+
+# PDF EXO 11
+
+def betweenOneAndTen():
+    num = 1
+
+    while True:
+        num = int(input("Entez un nombre entre 1 et 10 \n"))
+        if num < 1:
+            print('Recommence')
+        elif num > 10:
+            print('Recommence')
+        else:
+            print("Bien joué")
+            break
+
+### betweenOneAndTen()
+
+# PDF EXO 12
+
+def boucleImbriquées():
+    liste = ['Helder' , 'Gautier' , 'Sid']
+
+    for i in range(len(liste)):
+        for j in range(len(liste[i])):
+            print(liste[i][j])
+
+### boucleImbriquées()
+
+# PDF EXO 13
+
+def jump3by3():
+    for i in range(3 , 13):
+        if i % 3 == 0:
+            print(i)
+
+###jump3by3()
+
+# PDF EXO 14
+
+def printEvenNumbers(n):
+    cpt = 0
+    while cpt <= 1:
+        for i in range(0 , n):
+            if i % 2 == 0:
+                print(i)
+                cpt+=1
+
+
+printEvenNumbers(50)
