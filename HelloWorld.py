@@ -385,7 +385,7 @@ def compterMots(str):
 # PDF EXO 24
 
 def volumeSphere(r):
-    volume = ((4 * pi) * (r **3)) / 3
+    volume = ((4 * pi) * (r ** 3)) / 3
     return volume
 
 # print(volumeSphere(10))
@@ -396,9 +396,9 @@ def somme(a,b,c):
     return a + b + c
 
 monTuple = 1,2,3
-maListe = []
+a,b,c = monTuple
 
-print(somme(maListe))
+print(somme(a,b,c))
 
 
 
