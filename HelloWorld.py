@@ -268,7 +268,8 @@ def checkDotsAfterAt(mail):
     tmp = mail[::-1]
     i = 0
     print(tmp)
-    while i != '@':
+
+    while mail[i] != '@':
         if tmp[i] == '.':
             cptDot += 1
         i += 1
@@ -280,7 +281,7 @@ def checkDotsAfterAt(mail):
     else:
         print("NOT OK POINT POST @")
         return False
-    
+
 def checkIfOnly3charAfterLastPoint(mail):
     tmp = mail[::-1]
     if tmp[3] == '.':
@@ -297,17 +298,16 @@ def highLevelMailCheck(mail):
     else:
         print("Ce mail est incorrect")
 
-# mail = "helder.salvador@yahoo.com"
-# mail2 = "helder..salvador@yahoo.com"
+mail = "helder.salvador@yahoo.com"
+mail2 = "helder..salvador@yahoo.com"
 mail3 = "helder.salvador@yahoo..com"
-# mail4 = "helder.salvador@@yahoo.com"
-#
-checkDotsAfterAt(mail3)
-# print("DOIT ETRE CORRECT \n")
-# highLevelMailCheck(mail)
-# print("DOIT ETRE INCORRECT \n")
-# highLevelMailCheck(mail2)
-# print("DOIT ETRE INCORRECT \n")
-# highLevelMailCheck(mail3)
-# print("DOIT ETRE INCORRECT \n")
-# highLevelMailCheck(mail4)
+mail4 = "helder.salvador@@yahoo.com"
+
+print("DOIT ETRE CORRECT \n")
+highLevelMailCheck(mail)
+print("DOIT ETRE INCORRECT \n")
+highLevelMailCheck(mail2)
+print("DOIT ETRE INCORRECT \n")
+highLevelMailCheck(mail3)
+print("DOIT ETRE INCORRECT \n")
+highLevelMailCheck(mail4)
